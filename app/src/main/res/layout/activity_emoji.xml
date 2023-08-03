@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".EmojiActivity">
+
+    <ImageView
+        android:id="@+id/ae_gp_logo"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="#0079C1"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gp_logo"
+        tools:layout_editor_absoluteX="0dp"/>
+
+    <kg.gazprom.signer.views.RoundedImageView
+        android:id="@+id/ae_emoji"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ae_gp_logo"
+        app:srcCompat="@drawable/smiley_icon" />
+
+    <TextView
+        android:id="@+id/ae_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:paddingLeft="50sp"
+        android:paddingRight="50sp"
+        android:text="Спасибо за оценку"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        app:layout_constraintTop_toBottomOf="@+id/ae_emoji"
+        tools:layout_editor_absoluteX="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

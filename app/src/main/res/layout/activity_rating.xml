@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    tools:context=".RatingActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/ar_fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Иванова А."
+            android:textAlignment="center"
+            android:textSize="32sp" />
+
+        <kg.gazprom.signer.views.RoundedImageView
+            android:id="@+id/ar_avatar"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/default_avatar_photo_placeholder" />
+
+        <TextView
+            android:id="@+id/ar_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="50sp"
+            android:paddingRight="50sp"
+            android:text="Пожалуйста, оцените качество обслуживания оператора"
+            android:textAlignment="center"
+            android:textSize="26sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="20dp"
+        android:weightSum="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <kg.gazprom.signer.views.RoundButton
+            android:id="@+id/grade1_"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#D33514"
+            android:onClick="onGradeClick"
+            android:text="1"
+            android:textColor="#f0f0f0"
+            android:textSize="14sp" />
+
+        <kg.gazprom.signer.views.RoundButton
+            android:id="@+id/grade2_"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#ec4a19"
+            android:onClick="onGradeClick"
+            android:text="2"
+            android:textColor="#f0f0f0"
+            android:textSize="14sp" />
+
+        <kg.gazprom.signer.views.RoundButton
+            android:id="@+id/grade3_"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#f28a26"
+            android:onClick="onGradeClick"
+            android:text="3"
+            android:textColor="#555555"
+            android:textSize="14sp" />
+
+        <kg.gazprom.signer.views.RoundButton
+            android:id="@+id/grade4_"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#f8cc35"
+            android:onClick="onGradeClick"
+            android:text="4"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <kg.gazprom.signer.views.RoundButton
+            android:id="@+id/grade5_"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#fbef3b"
+            android:onClick="onGradeClick"
+            android:text="5"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <kg.gazprom.signer.views.RoundButton
+            android:id="@+id/grade6_"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#e5ef39"
+            android:onClick="onGradeClick"
+            android:text="6"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <kg.gazprom.signer.views.RoundButton
+            android:id="@+id/grade7_"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#bbe831"
+            android:onClick="onGradeClick"
+            android:text="7"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <kg.gazprom.signer.views.RoundButton
+            android:id="@+id/grade8_"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#8ee02b"
+            android:onClick="onGradeClick"
+            android:text="8"
+            android:textColor="#555555"
+            android:textSize="14sp" />
+
+        <kg.gazprom.signer.views.RoundButton
+            android:id="@+id/grade9_"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#3fd31d"
+            android:onClick="onGradeClick"
+            android:text="9"
+            android:textColor="#f0f0f0"
+            android:textSize="14sp" />
+
+        <kg.gazprom.signer.views.RoundButton
+            android:id="@+id/grade10_"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#07ca14"
+            android:onClick="onGradeClick"
+            android:text="10"
+            android:textColor="#f0f0f0"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <TextView
+            android:id="@+id/badLabel3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="Плохо"
+            android:textAlignment="center"
+            android:textColor="#D33514" />
+
+        <TextView
+            android:id="@+id/badLabel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="Удовлетворительно"
+            android:textAlignment="center"
+            android:textColor="#f8cc35" />
+
+        <TextView
+            android:id="@+id/goodLabel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="5dp"
+            android:text="Хорошо"
+            android:textAlignment="center"
+            android:textColor="#07ca14" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
