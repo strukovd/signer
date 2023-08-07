@@ -8,6 +8,8 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -19,6 +21,25 @@ import kg.gazprom.signer.views.DrawingView;
 
 public class AgreementSigningActivity extends AppCompatActivity {
     DrawingView viewSignCanvas;
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add("Сброс").setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case 0:
+                viewSignCanvas.clearDrawing();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +75,7 @@ public class AgreementSigningActivity extends AppCompatActivity {
                 super.onPostExecute(signatureIsSaved);
 
                 if(signatureIsSaved.success) {
+                    StorageManager.agreementPdfFileWithSignatureCache = null; // Сбрасываем закэшированный документ, что бы обновилась подпись
                     startActivity(new Intent(getApplicationContext(), AgreementConfirmationActivity.class));
                 }
                 else {

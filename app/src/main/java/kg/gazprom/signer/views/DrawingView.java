@@ -131,6 +131,14 @@ public class DrawingView extends View {
         mPath.reset();
     }
 
+    public void clearDrawing() {
+        mBitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
+        mCanvas = new Canvas(mBitmap);
+        mPath.reset();
+        circlePath.reset();
+        invalidate();
+    }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float x = event.getX();

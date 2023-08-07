@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.util.Log;
 // import android.view.Menu;
 // import android.view.MenuItem;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 import kg.gazprom.signer.DTO.ResponseInfo;
@@ -22,12 +24,22 @@ public class SigningActivity extends AppCompatActivity implements LifecycleOwner
     DrawingView viewSignCanvas;
 
 
-    // @Override
-    // public boolean onCreateOptionsMenu(Menu menu) {
-    //     menu.add("Сброс").setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS); //TODO:
+     @Override
+     public boolean onCreateOptionsMenu(Menu menu) {
+         menu.add("Сброс").setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+         return super.onCreateOptionsMenu(menu);
+     }
 
-    //     return super.onCreateOptionsMenu(menu);
-    // }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case 0:
+                viewSignCanvas.clearDrawing();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 
 
@@ -66,6 +78,7 @@ public class SigningActivity extends AppCompatActivity implements LifecycleOwner
 
                 // Если картинка успешно сохранена
                 if(signatureIsSaved.success) {
+                    StorageManager.pdfFileWithSignatureCache = null; // Сбрасываем закэшированный документ, что бы обновилась подпись
                     startActivity(new Intent(getApplicationContext(), PDFConfirmationActivity.class));
                 }
                 else {
