@@ -40,8 +40,14 @@ public class PDFActivity extends AppCompatActivity {
         viewButtonNext = ((Button)findViewById(R.id.ap_next));
         viewPDF.setVisibility(View.GONE);
 
-        final String documentId = getIntent().getExtras().getString("documentId");
-        final String issueKey = getIntent().getExtras().getString("issueKey");
+        String documentId = null;
+        String issueKey = null;
+        final Bundle extras = getIntent().getExtras();
+        if(extras != null) {
+            documentId = extras.getString("documentId");
+            issueKey = extras.getString("issueKey");
+        }
+
         if(documentId == null) { showErrorMsg("Не получен параметр documentId"); return; }
         if(issueKey == null) { showErrorMsg("Не получен параметр issueKey"); return; }
 
