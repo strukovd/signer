@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+import com.github.gcacace.signaturepad.views.SignaturePad;
 
 import kg.gazprom.signer.DTO.ResponseInfo;
 import kg.gazprom.signer.common.StorageConfig;
@@ -21,6 +22,7 @@ import kg.gazprom.signer.views.DrawingView;
 
 public class AgreementSigningActivity extends AppCompatActivity {
     DrawingView viewSignCanvas;
+    SignaturePad viewSignPad;
 
 
     @Override
@@ -33,7 +35,7 @@ public class AgreementSigningActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case 0:
-                viewSignCanvas.clearDrawing();
+                viewSignPad.clear();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -46,7 +48,7 @@ public class AgreementSigningActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agreement_signing);
 
-        viewSignCanvas = findViewById(R.id.aas_signCanvas);
+        viewSignPad = findViewById(R.id.aas_signaturePad);
     }
 
     public void onSignButtonClick(View view) throws Exception {
@@ -86,10 +88,10 @@ public class AgreementSigningActivity extends AppCompatActivity {
     }
 
     private Bitmap extractSignature() {
-        if(viewSignCanvas != null) {
-            viewSignCanvas.setDrawingCacheEnabled(true);
-            Bitmap drawingCache = Bitmap.createBitmap(viewSignCanvas.getDrawingCache());
-            viewSignCanvas.setDrawingCacheEnabled(false);
+        if(viewSignPad != null) {
+            viewSignPad.setDrawingCacheEnabled(true);
+            Bitmap drawingCache = Bitmap.createBitmap(viewSignPad.getDrawingCache());
+            viewSignPad.setDrawingCacheEnabled(false);
 
             return cropEmptySpace(drawingCache);
         }

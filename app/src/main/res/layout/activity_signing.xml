@@ -15,7 +15,22 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@android:drawable/presence_away" />
+    app:srcCompat="@android:drawable/presence_away"
+    android:visibility="gone"
+    />
+
+<com.github.gcacace.signaturepad.views.SignaturePad
+    android:id="@+id/as_signaturePad"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginBottom="10dp"
+    app:layout_constraintBottom_toTopOf="@+id/as_buttonSign"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@android:drawable/presence_away"
+    android:saveEnabled="false"
+    />
 
     <Button
         android:id="@+id/as_buttonSign"

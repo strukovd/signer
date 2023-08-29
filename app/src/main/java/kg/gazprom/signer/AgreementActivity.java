@@ -100,7 +100,6 @@ public class AgreementActivity extends AppCompatActivity {
                     showErrorMsg("Не удалось загрузить документ!");
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Получил ID соглашения!" + agreementId, Toast.LENGTH_LONG).show();
                     AsyncPDFAgreementDownload.execute( String.format("%s/getFile?documentId=%s", StorageConfig.ADB_INTERACTOR_URL, agreementId) );
                 }
             }
